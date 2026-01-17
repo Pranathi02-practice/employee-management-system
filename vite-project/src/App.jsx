@@ -5,16 +5,28 @@ import './App.css'
 import Login from './components/Login/login'
 import { Routes, Route, Navigate } from "react-router-dom";
 import Dashboard from './components/Dashboard/Dashboard'
+import { createTheme, ThemeProvider } from '@mui/material'
 
+
+const theme = createTheme({
+  palette: {
+    primary: {
+      main: "#3c3b3b",
+    },
+  },
+});
 
 function App() {
-  const [count, setCount] = useState(0)
+ const isLoggedIn = localStorage.getItem("isLoggedIn") === "true";
 
   return (
-      <Routes>
-      <Route path="/" element={<Navigate to="/login" />} />
-       <Route path="/dashboard" element={<Dashboard/>} />
+    <ThemeProvider theme={theme}>
+         <Routes>
+      <Route path="/" element={<Login/>} />
+       <Route path="/dashboard" element={isLoggedIn ? <Dashboard /> : <Navigate to="/" />}/>
       </Routes>
+    </ThemeProvider>
+     
   )
 }
 

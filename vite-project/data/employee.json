@@ -1,0 +1,57 @@
+{"employees":[
+  {
+    "employeeId": "EMP001",
+    "profileImage": "https://randomuser.me/api/portraits/men/11.jpg",
+    "fullName": "Rahul Sharma",
+    "gender": "Male",
+    "dob": "1996-05-14",
+    "state": "Telangana",
+    "isActive": true
+  },
+  {
+    "employeeId": "EMP002",
+    "profileImage": "https://randomuser.me/api/portraits/women/21.jpg",
+    "fullName": "Priya Reddy",
+    "gender": "Female",
+    "dob": "1998-02-09",
+    "state": "Andhra Pradesh",
+    "isActive": false
+  },
+  {
+    "employeeId": "EMP003",
+    "profileImage": "https://randomuser.me/api/portraits/men/25.jpg",
+    "fullName": "Amit Verma",
+    "gender": "Male",
+    "dob": "1994-11-22",
+    "state": "Karnataka",
+    "isActive": true
+  },
+  {
+    "employeeId": "EMP004",
+    "profileImage": "https://randomuser.me/api/portraits/women/30.jpg",
+    "fullName": "Sneha Patil",
+    "gender": "Female",
+    "dob": "1997-08-03",
+    "state": "Maharashtra",
+    "isActive": true
+  },
+  {
+    "employeeId": "EMP005",
+    "profileImage": "https://randomuser.me/api/portraits/men/41.jpg",
+    "fullName": "Vikram Singh",
+    "gender": "Male",
+    "dob": "1993-01-18",
+    "state": "Tamil Nadu",
+    "isActive": false
+  },
+  {
+    "employeeId": "EMP006",
+    "profileImage": "https://randomuser.me/api/portraits/women/45.jpg",
+    "fullName": "Anjali Mehta",
+    "gender": "Female",
+    "dob": "1999-12-27",
+    "state": "Kerala",
+    "isActive": true
+  }
+]
+}
