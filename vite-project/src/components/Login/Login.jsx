@@ -1,6 +1,6 @@
-import React, { useState } from 'react'
-import { Box, Button, TextField } from "@mui/material";
-import { Navigate, useNavigate } from 'react-router-dom';
+import { useState } from 'react'
+import { Button, TextField, Typography } from "@mui/material";
+import { useNavigate } from 'react-router-dom';
 
 const Login = () => {
     const [user, setUser] = useState("")
@@ -10,52 +10,69 @@ const Login = () => {
 
     //Enable Submit button
     const isEnabled = (user.trim() && password.trim());
-console.log("enable",isEnabled);
 
-    //     document.cookie = `username=${user}; path=/`;
-    // document.cookie = `password=${password}; path=/`;
-
-    // const username = getCookie("username");
-    // const pwd =  getCookie("password");
-
-
-    console.log("user", user);
-
-
-         const handleSubmit = (e) => {
-         e.preventDefault();
+    const handleSubmit = (e) => {
+        e.preventDefault();
         localStorage.setItem("isLoggedIn", "true");
         navigate("/dashboard")
-      };
+    };
     return (
-        <Box
-            sx={{
+        <div
+            style={{
                 minHeight: "100vh",
-                // maxWidth: "100vw",
                 display: "flex",
-                alignItems: "center",
                 justifyContent: "center",
+                alignItems: "center",
+                padding: "16px",
             }}
         >
-            <Box
-                component="form"
-                sx={{
+            <form
+
+                style={{
+                    width: "100%",
+                    maxWidth: "360px",
                     display: "flex",
                     flexDirection: "column",
-                    gap: 2,
-                    maxWidth: 360,
-                    width: "100%",
+                    gap: "16px",
+                    border: "1px solid #3c3b3b",
+                    padding: "24px",
+
+                    borderRadius: "8px",
+
                 }}
             >
-                <TextField label="Username" onChange={(e) => setUser(e.target.value)} />
-                <TextField label="Password" type="password" onChange={(e) => setPassword(e.target.value)} />
-                <Button variant="contained" sx={{ width: 200, mx: "auto", backgroundColor: "#ae85ed", }} disabled={!isEnabled} 
-                onClick={(e) =>handleSubmit(e) }>
+                <Typography variant="h6" style={{ textAlign: "center" }}>
+                    Login
+                </Typography>
+
+                <TextField
+                    fullWidth
+                    label="Username"
+                    value={user}
+                    onChange={(e) => setUser(e.target.value)}
+                />
+
+                <TextField
+                    fullWidth
+                    label="Password"
+                    type="password"
+                    value={password}
+                    onChange={(e) => setPassword(e.target.value)}
+                />
+
+                <Button
+                    type="submit"
+                    variant="contained"
+                    disabled={!isEnabled}
+                    sx={{ textTransform: "none" }}
+                    onClick={handleSubmit}
+
+                >
                     Login
                 </Button>
-            </Box>
-        </Box>
-    )
+            </form>
+        </div>
+    );
 }
 
-export default Login
+export default Login;
